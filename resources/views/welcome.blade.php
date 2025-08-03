@@ -11,7 +11,7 @@
 <div class="cardmotor grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 justify-center gap-6 px-4 md:px-10 py-6">
     @foreach ($motor as $item)
     <div class="w-80 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col">
-        <img class="w-full h-40 object-cover rounded-t-lg" alt="Card Image" src="/asset/hahay.jpg">
+        <img class="w-full h-40 object-cover rounded-t-lg" alt="Card Image" src="{{ $item['img'] }}">
         <div class="card p-4 flex flex-col flex-grow">
             <h2 class="text-xl font-bold text-gray-800">{{ $item['name'] }}</h2>
             <h3 class="text-gray-600 font-semibold">

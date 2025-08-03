@@ -6,7 +6,7 @@
 
     <!-- Judul -->
     <section class="text-center mb-14">
-        <h1 class="text-5xl font-bold text-gray-800 mb-4">Hubungi Kami</h1>
+        <h1 class="text-5xl font-extrabold text-gray-800 mb-4">Hubungi Kami</h1>
         <p class="text-lg text-gray-600">
             Anda bisa menghubungi kami langsung melalui kontak berikut, atau kirimkan pesan Anda melalui formulir di bawah ini.
         </p>
@@ -14,21 +14,21 @@
 
     <!-- Info Kontak -->
     <section class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center border-2 border-gray-200">
             <div class="text-indigo-600 text-4xl mb-3">
                 <i class="fa-solid fa-phone-volume"></i>
             </div>
             <h3 class="text-xl font-semibold text-gray-800 mb-1">Telepon</h3>
             <p class="text-gray-600">0877-7778-8777</p>
         </div>
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center border-2 border-gray-200">
             <div class="text-indigo-600 text-4xl mb-3">
                 <i class="fa-solid fa-envelope-open-text"></i>
             </div>
             <h3 class="text-xl font-semibold text-gray-800 mb-1">Email</h3>
             <p class="text-gray-600">baherindomotor@gmail.com</p>
         </div>
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center border-2 border-gray-200">
             <div class="text-indigo-600 text-4xl mb-3">
                 <i class="fa-solid fa-location-dot"></i>
             </div>
@@ -37,9 +37,9 @@
         </div>
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start ">
         <!-- Form Kontak -->
-        <div class="bg-white rounded-lg shadow-lg p-8 space-y-6">
+        <div class="bg-white rounded-lg shadow-lg p-8 space-y-6 border-2 border-gray-200">
             <h2 class="text-2xl font-semibold text-gray-800">Kirim Pesan</h2>
 
             <form onsubmit="return false;">

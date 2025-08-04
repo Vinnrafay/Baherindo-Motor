@@ -5,25 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\MotorBaherindo;
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class MotorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $motor = MotorBaherindo::all()->map(function ($item) {
-            return [
-                'id' => $item->id,
-                'nama_motor' => $item->nama_motor,
-                'harga_motor' => $item->harga_motor,
-                'tahun_motor' => $item->tahun_motor,
-                'km_motor' => $item->km_motor,
-                'gambar_motor' => asset('asset/' . $item->gambar_motor),
-            ];
-        });
-            
-        return view("welcome", compact ('motor'));
+        return view ('motor.create');
     }
 
     /**
@@ -39,7 +28,24 @@ class WelcomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_motor' => 'required|string',
+            'harga_motor' => 'required|numeric',
+            'tahun_motor' => 'required|integer',
+            'km_motor' => 'required|integer',
+            'gambar_motor' => 'image|mimes:jpeg,png,jpg',
+        ]);
+
+        MotorBaherindo::create($request->all());
+
+        if ($request->hasFile('gambar_motor')) {
+        $file = $request->file('gambar_motor');
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $path = $file->storeAs('asset/', $filename);
+        $requestData['gambar_motor'] = $filename;
+}
+
+        return redirect()->route('motor.index')->with('success', 'Motor created successfully.');
     }
 
     /**

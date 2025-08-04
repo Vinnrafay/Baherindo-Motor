@@ -25,7 +25,7 @@
          <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Beli Motor</a>
       <a href="/about" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">About</a>
       <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Contact</a>
-      <a href="/admin/form" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">+ Tambah Motor</a>
+      <a href="/motor" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">+ Tambah Motor</a>
           </div>
         </div>
       </div>

@@ -46,7 +46,6 @@
                 <img src="https://i.pravatar.cc/150?img=11" alt="John Doe" class="w-24 h-24 mx-auto rounded-full mb-4">
                 <h3 class="text-xl font-semibold text-gray-800">John Doe</h3>
                 <p class="text-gray-500">Manajer Penjualan</p>
-                <p class="mt-2 text-sm text-gray-600">Berpengalaman lebih dari 10 tahun dalam industri penjualan otomotif dan dikenal dengan pendekatan customer-first.</p>
             </div>
 
             <!-- Card 2 -->
@@ -54,7 +53,6 @@
                 <img src="https://i.pravatar.cc/150?img=12" alt="Jane Smith" class="w-24 h-24 mx-auto rounded-full mb-4">
                 <h3 class="text-xl font-semibold text-gray-800">Jane Smith</h3>
                 <p class="text-gray-500">Spesialis Produk</p>
-                <p class="mt-2 text-sm text-gray-600">Memiliki keahlian dalam spesifikasi motor dan teknologi terbaru, siap membantu memilih motor yang sesuai kebutuhan.</p>
             </div>
 
             <!-- Card 3 -->
@@ -62,7 +60,6 @@
                 <img src="https://i.pravatar.cc/150?img=13" alt="Mike Johnson" class="w-24 h-24 mx-auto rounded-full mb-4">
                 <h3 class="text-xl font-semibold text-gray-800">Mike Johnson</h3>
                 <p class="text-gray-500">Layanan Pelanggan</p>
-                <p class="mt-2 text-sm text-gray-600">Selalu siap menjawab pertanyaan pelanggan dengan cepat dan ramah, memastikan kepuasan Anda terjaga.</p>
             </div>
         </div>
     </section>

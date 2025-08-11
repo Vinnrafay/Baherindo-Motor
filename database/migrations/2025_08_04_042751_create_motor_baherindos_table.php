@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('motor_baherindos', function (Blueprint $table) {
             $table->id();
             $table->string('nama_motor');
-            $table->decimal('harga_motor', 10, 2);
+            $table->decimal('harga_motor');
             $table->year('tahun_motor');
             $table->integer('km_motor');
             $table->string('gambar_motor')->nullable();

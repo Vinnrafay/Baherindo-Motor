@@ -12,7 +12,8 @@ class MotorController extends Controller
      */
     public function index()
     {
-        return view ('motor.create');
+        $motor = MotorBaherindo::all();
+        return view('motor.create', compact('motor')); // optional
     }
 
     /**
@@ -20,40 +21,40 @@ class MotorController extends Controller
      */
     public function create()
     {
-        //
+        return view ('motor.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'nama_motor' => 'required|string',
-            'harga_motor' => 'required|numeric',
-            'tahun_motor' => 'required|integer',
-            'km_motor' => 'required|integer',
-            'gambar_motor' => 'image|mimes:jpeg,png,jpg',
-        ]);
+public function store(Request $request)
+{
+    $validateData = $request->validate([
+        'nama_motor' => 'required|string',
+        'harga_motor' => 'required|numeric',
+        'km_motor' => 'required|integer',
+        'tahun_motor' => 'required|integer',
+        'gambar_motor' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
 
-        MotorBaherindo::create($request->all());
+ if($request->hasFile('gambar_motor')) {
+    $path = $request->file('gambar_motor')->store('motorbaherindo', 'public');
+    $validateData['gambar_motor'] = $path; 
 
-        if ($request->hasFile('gambar_motor')) {
-        $file = $request->file('gambar_motor');
-        $filename = time() . '_' . $file->getClientOriginalName();
-        $path = $file->storeAs('asset/', $filename);
-        $requestData['gambar_motor'] = $filename;
-}
-
-        return redirect()->route('motor.index')->with('success', 'Motor created successfully.');
     }
+
+    MotorBaherindo::create( $validateData );
+
+    return redirect('/');
+}
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
+        $motor = MotorBaherindo::findOrFail($id);
+        return view('motor.show', compact('motor'));
     }
 
     /**
@@ -61,7 +62,8 @@ class MotorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $motor = MotorBaherindo::findOrFail($id);
+        return view('motor.edit', compact('motor'));
     }
 
     /**
@@ -69,7 +71,23 @@ class MotorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $motor = MotorBaherindo::findOrFail($id);
+
+        $validateData = $request->validate([
+            'nama_motor' => 'required|string',
+            'harga_motor' => 'required|numeric',
+            'km_motor' => 'required|integer',
+            'tahun_motor' => 'required|integer',
+            'gambar_motor' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('gambar_motor')) {
+            $path = $request->file('gambar_motor')->store('motorbaherindo', 'public');
+            $validateData['gambar_motor'] = $path;
+        }
+
+        $motor->update($validateData);
+        return redirect('/');
     }
 
     /**
@@ -77,6 +95,8 @@ class MotorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $motor = MotorBaherindo::findOrFail($id);
+        $motor->delete();
+        return redirect('/');
     }
 }

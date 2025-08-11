@@ -12,17 +12,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $motor = MotorBaherindo::all()->map(function ($item) {
-            return [
-                'id' => $item->id,
-                'nama_motor' => $item->nama_motor,
-                'harga_motor' => $item->harga_motor,
-                'tahun_motor' => $item->tahun_motor,
-                'km_motor' => $item->km_motor,
-                'gambar_motor' => asset('asset/' . $item->gambar_motor),
-            ];
-        });
-            
+        $motor = MotorBaherindo::all();
         return view("welcome", compact ('motor'));
     }
 
